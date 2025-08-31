@@ -1,0 +1,233 @@
+// src/styles/main.scss
+@import './hero'; // assumes _hero.scss exists
+
+$color1: #b383b7; // muted purple
+$color2: #d6a0c4; // dusty pink
+$color3: #c89fc2; // lavender-mauve
+
+
+
+  
+
+html, body {
+  font-family: 'Kode Mono', monospace;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  font-family: inherit; /* ensures children inherit Kode Mono */
+}
+
+.App{
+    position: relative;
+    z-index: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-size: 300% 300%;
+    animation: gradientFlow 15s ease-in-out infinite;
+    color: #222;
+  }
+
+
+//   #738fbd #a8c3d4 #dbd6df #eec6c7 #db88a4 #cc8eb1
+// #738fbd #a8c3d4 #dbd6df #eec6c7 #db88a4 #cc8eb1
+
+  // :root {
+  //   --color-bg1: rgb(255, 255, 255);
+  //   --color-bg2: rgba(163, 29, 118, 0.157);
+  //   --color1: 160, 159, 178;
+  //   --color2: (56, 19, 7);
+  //   --color3: 219, 214, 223;
+  //   --color4: 238, 198, 199;
+  //   --color5: 219, 136, 164;
+  //   --color-interactive: (201, 21, 123);
+  //   --circle-size: 80%;
+  //   --blending: hard-light;
+  // }
+  
+
+  :root {
+    --color-bg1: rgb(249, 234, 225);   /* linen */
+    --color-bg2: rgb(204, 139, 134);   /* old-rose */
+    --color1: 173, 130, 132;           /* lightened rose-taupe */
+    --color2: 209, 190, 156;           /* dun */
+    --color3: 196, 179, 170;           /* lighter cinereous */
+    --color4: 204, 139, 134;           /* old-rose reused */
+    --color5: 249, 234, 225;           /* linen reused */
+    --color-interactive: 196, 179, 170;/* lighter accent */
+    --circle-size: 80%;
+    --blending: hard-light;
+
+    --color-primary-pink-old: #ad8284; // lightened rose-taupe
+    --color-primary-warm-yellow: #d1be9c; // dun (warm neutral)
+    --color-primary-light-cream: #c4b3aa; // lightened cinereous
+    --color-primary-white: #f3ece8;
+    --color-primary-dark: #200b1a;
+    --color-primary-dark-cream: #433a35; // lightened cinereous
+    --color-primary-pink-old-dark: #855052; // lightened rose-taupe
+
+  }
+  
+
+  
+  @keyframes moveInCircle {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes moveVertical {
+    0% {
+      transform: translateY(-50%);
+    }
+    50% {
+      transform: translateY(50%);
+    }
+    100% {
+      transform: translateY(-50%);
+    }
+  }
+  
+  @keyframes moveHorizontal {
+    0% {
+      transform: translateX(-50%) translateY(-10%);
+    }
+    50% {
+      transform: translateX(50%) translateY(10%);
+    }
+    100% {
+      transform: translateX(-50%) translateY(-10%);
+    }
+  }
+  
+  .gradient-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -10;
+    overflow: hidden;
+    background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
+    pointer-events: none; // just in case it blocks interaction
+  
+    svg {
+      position: fixed;
+      top:0;
+      left:0;
+      width: 0;
+      height: 0;
+    }
+  
+  
+    .gradients-container {
+      filter: url(#goo) blur(40px) ;
+      width: 100%;
+      height: 100%;
+    }
+  
+    .g1 {
+      position: absolute;
+      background: radial-gradient(circle at center, rgba(var(--color1), 0.8) 0, rgba(var(--color1), 0) 50%) no-repeat;
+      mix-blend-mode: var(--blending);
+  
+      width: var(--circle-size);
+      height: var(--circle-size);
+      top: calc(50% - var(--circle-size) / 2);
+      left: calc(50% - var(--circle-size) / 2);
+  
+      transform-origin: center center;
+      animation: moveVertical 30s ease infinite;
+  
+      opacity: 1;
+    }
+  
+    .g2 {
+      position: absolute;
+      background: radial-gradient(circle at center, rgba(var(--color2), 0.8) 0, rgba(var(--color2), 0) 50%) no-repeat;
+      mix-blend-mode: var(--blending);
+  
+      width: var(--circle-size);
+      height: var(--circle-size);
+      top: calc(50% - var(--circle-size) / 2);
+      left: calc(50% - var(--circle-size) / 2);
+  
+      transform-origin: calc(50% - 400px);
+      animation: moveInCircle 20s reverse infinite;
+  
+      opacity: 1;
+    }
+  
+    .g3 {
+      position: absolute;
+      background: radial-gradient(circle at center, rgba(var(--color3), 0.8) 0, rgba(var(--color3), 0) 50%) no-repeat;
+      mix-blend-mode: var(--blending);
+  
+      width: var(--circle-size);
+      height: var(--circle-size);
+      top: calc(50% - var(--circle-size) / 2 + 200px);
+      left: calc(50% - var(--circle-size) / 2 - 500px);
+  
+      transform-origin: calc(50% + 400px);
+      animation: moveInCircle 40s linear infinite;
+  
+      opacity: 1;
+    }
+  
+    .g4 {
+      position: absolute;
+      background: radial-gradient(circle at center, rgba(var(--color4), 0.8) 0, rgba(var(--color4), 0) 50%) no-repeat;
+      mix-blend-mode: var(--blending);
+  
+      width: var(--circle-size);
+      height: var(--circle-size);
+      top: calc(50% - var(--circle-size) / 2);
+      left: calc(50% - var(--circle-size) / 2);
+  
+      transform-origin: calc(50% - 200px);
+      animation: moveHorizontal 40s ease infinite;
+  
+      opacity: 0.7;
+    }
+  
+    .g5 {
+      position: absolute;
+      background: radial-gradient(circle at center, rgba(var(--color5), 0.8) 0, rgba(var(--color5), 0) 50%) no-repeat;
+      mix-blend-mode: var(--blending);
+  
+      width: calc(var(--circle-size) * 2);
+      height: calc(var(--circle-size) * 2);
+      top: calc(50% - var(--circle-size));
+      left: calc(50% - var(--circle-size));
+  
+      transform-origin: calc(50% - 800px) calc(50% + 200px);
+      animation: moveInCircle 20s ease infinite;
+  
+      opacity: 1;
+    }
+  
+    .interactive {
+      position: absolute;
+      background: radial-gradient(circle at center, rgba(var(--color-interactive), 0.8) 0, rgba(var(--color-interactive), 0) 50%) no-repeat;
+      mix-blend-mode: var(--blending);
+  
+      width: 100%;
+      height: 100%;
+      top: -50%;
+      left: -50%;
+  
+      opacity: 0.7;
+    }
+  }

@@ -1,0 +1,110 @@
+.skills {
+    padding: 6rem 2rem;
+    text-align: center;
+  
+    h2 {
+      font-size: 2.5rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+  
+    .hint {
+      color: #ccc;
+      margin-bottom: 2rem;
+    }
+  
+    .skills-groups {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+  
+    .skill-group-card {
+      position: relative;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2rem 2rem;
+      border-radius: 1rem;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(6px);
+      min-width: 160px;
+      cursor: default;
+      transition: all 0.3s ease;
+      z-index: 2;
+  
+      &:hover {
+        z-index: 9999;
+        background: rgba(255, 255, 255, 0.15);
+      }
+  
+      h3 {
+        margin: 0;
+        font-size: 1.2rem;
+      }
+  
+      .hover-reveal {
+        position: absolute;
+        top: 110%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #1e1b2f;
+        padding: 1.5rem;
+        border-radius: 1rem;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        z-index: 100;
+        width: max-content;
+        max-width: 320px;
+      }
+  
+      &:hover .hover-reveal {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateX(-50%) translateY(5px);
+      }
+  
+      .skill-card {
+        width: 80px;
+  
+        svg {
+          width: 60px;
+          height: 60px;
+          transform: rotate(-90deg);
+          margin: auto;
+  
+          .bg {
+            fill: none;
+            stroke: #444;
+            stroke-width: 3.8;
+          }
+  
+          .progress {
+            fill: none;
+            stroke: #b383b7;
+            stroke-width: 3.8;
+            stroke-linecap: round;
+          }
+  
+          .percentage {
+            fill: #fff;
+            font-size: 0.35rem;
+            text-anchor: middle;
+            transform: rotate(90deg);
+            transform-origin: center;
+          }
+        }
+  
+        p {
+          margin-top: 0.5rem;
+          font-size: 0.75rem;
+          color: #ddd;
+        }
+      }
+    }
+  }

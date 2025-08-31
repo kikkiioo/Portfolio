@@ -5,6 +5,8 @@ import '../styles/contact.scss';
 const Contact = () => {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+
 
   const handleChange = e => {
     const { name, value } = e.target;
@@ -13,16 +15,17 @@ const Contact = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-
+    setLoading(true);
+  
     emailjs.send(
-      'service_lfvxo5w',     // replace with your EmailJS service ID
-      'template_25qosyg',    // replace with your EmailJS template ID
+      'service_lfvxo5w',
+      'template_25qosyg',
       {
         name: form.name,
         email: form.email,
         message: form.message,
       },
-      'ADnFjpGgvXnA7jc-F'         // replace with your EmailJS public user ID
+      'ADnFjpGgvXnA7jc-F'
     )
     .then(() => {
       setSubmitted(true);
@@ -31,14 +34,23 @@ const Contact = () => {
     .catch(err => {
       console.error(err);
       alert('Something went wrong!');
+    })
+    .finally(() => {
+      setLoading(false);
     });
   };
+  
+  const handleClosePopup = () => {
+    setSubmitted(false);
+    setLoading(false);
+  };
+  
 
   return (
     <section className="contact" id="contact">
       <h2>Let's Talk?</h2>
       <p className="subtext">
-        ☕ Whether it’s a role, a project, or just a good reason to talk over coffee — I’m in. Let’s connect!
+         Whether it’s a role, a project, or just a good reason to talk over coffee — I’m in. Let’s connect!☕
      </p>
 
 
@@ -49,8 +61,26 @@ const Contact = () => {
         <button type="submit">Send Message</button>
       </form>
 
-      {submitted && <p className="success">Thanks! I’ll get back to you soon 🚀</p>}
+      {loading && (
+        <div className="popup loading">
+          <div className="popup-content">
+            <p>Sending your message… ⏳</p>
+          </div>
+        </div>
+      )}
+
+      {submitted && !loading && (
+        <div className="popup success">
+          <div className="popup-content">
+            <button className="close-btn" onClick={handleClosePopup}>×</button>
+            <p>✅ Thanks! I’ll get back to you soon 🚀</p>
+          </div>
+        </div>
+      )}
+
     </section>
+
+    
   );
 };
 

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import '../styles/about.scss';
 import gradPicVV1G from '../assets/grad_highschool.jpg'; 
 import gradPicRTU from '../assets/grad_rtu.jpg'; // Example image path
-import gradPic from '../assets/graduation.png'
+import work from '../assets/work.jpg'
 import vv1gLogo from '../assets/logo.png';
 import rtuLogo from '../assets/rtu_logo.png'
 import asyaLogo from '../assets/asya_logo.png'
@@ -23,15 +23,15 @@ const milestones = [
     description: 'Earned a engineering Bachelor’s degree in Computer Science.',
     logo: rtuLogo,
     image: gradPicRTU,
-    story: 'Developed 10+ full-stack projects, joined AI research, and led hackathons.'
+    story: 'Completed academic courses in statistics, practical courses in programming and database management'
   },
   {
     year: '2022–Now',
     title: 'Full-Stack Software Developer',
-    description: 'Building scalable applications and designing clean user experiences.!!!!!!!!!!!!!!!!',
+    description: 'Building scalable applications and designing clean user experiences.',
     logo: asyaLogo,
-    image: gradPic,
-    story: 'Crafting modern web apps and mentoring juniors in React best practices. Yesyesyesyesyes'
+    image: work,
+    story: 'Crafting modern web apps, desktop apps and backend systems.'
   }
 ];
 

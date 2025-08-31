@@ -7,14 +7,20 @@ const skillsData = {
     { name: 'CSS / SCSS', level: 85 },
     { name: 'JavaScript', level: 80 },
     { name: 'React', level: 75 },
+    { name: 'XAML', level: 75 },
   ],
   backend: [
-    { name: 'Node.js', level: 70 },
-    { name: 'MongoDB', level: 65 },
+    { name: 'Python', level: 70 },
+    { name: 'C#', level: 65 },
+    { name: 'PostgreSQL', level: 65 },
+    { name: 'MySQL', level: 65 },
   ],
   tools: [
     { name: 'Git', level: 90 },
     { name: 'Figma', level: 60 },
+    { name: 'VScode', level: 60 },
+    { name: 'Windows', level: 60 },
+    { name: 'Linux', level: 60 },
   ],
   soft: [
     { name: 'Teamwork', level: 85 },
@@ -34,11 +40,11 @@ const Skills = () => {
             <div className="hover-reveal">
               {items.map((skill, index) => (
                 <div className="skill-card" key={index}>
-                  <svg className="circle" viewBox="0 0 36 36">
+                  {/* <svg className="circle" viewBox="0 0 36 36">
                     <path className="bg" d="M18 2.0845 a15.9155 15.9155 0 1 1 0 31.831 a15.9155 15.9155 0 1 1 0-31.831" />
                     <path className="progress" strokeDasharray={`${skill.level}, 100`} d="M18 2.0845 a15.9155 15.9155 0 1 1 0 31.831 a15.9155 15.9155 0 1 1 0-31.831" />
                     <text x="18" y="20.35" className="percentage">{skill.level}%</text>
-                  </svg>
+                  </svg> */}
                   <p>{skill.name}</p>
                 </div>
               ))}

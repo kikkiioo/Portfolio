@@ -50,7 +50,7 @@
       width: 100%;
       height: 100%;
       backface-visibility: hidden;
-      background: white;
+      background: rgb(255, 255, 255);
       border-radius: 10px;
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
       padding: 1rem;
@@ -76,20 +76,20 @@
       .year {
         font-weight: bold;
         font-size: 1.3rem;
-        color: #b383b7;
+        color: var(--color-primary-pink-old-dark);
         margin-top: 1.5rem;
         margin-bottom: 0rem;
       }
 
       h3 {
         font-size: 1.1rem;
-        color: #333;
+        color: var(--color-primary-dark);
         margin-bottom: 0.5rem;
       }
 
       p {
         font-size: 0.9rem;
-        color: #555;
+        color: var(--color-primary-dark-cream);
         line-height: 1.4;
       }
     }
@@ -129,7 +129,7 @@
     }
 
     .flip-card {
-      width: 90vw;
+      width: 50vw;
       height: 340px;
     }
 

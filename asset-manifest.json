@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/Portfolio/static/css/main.1ff26f82.css",
+    "main.js": "/Portfolio/static/js/main.1ec2b87c.js",
+    "static/media/avatar_3.png": "/Portfolio/static/media/avatar_3.f0ea7bc2c360355291f0.png",
+    "static/media/grad_highschool.jpg": "/Portfolio/static/media/grad_highschool.1d79ee606d5958e63a88.jpg",
+    "static/media/grad_rtu.jpg": "/Portfolio/static/media/grad_rtu.46724db50019dee96919.jpg",
+    "static/media/logo.png": "/Portfolio/static/media/logo.1fa12eb2a069849bc2b5.png",
+    "static/media/rtu_logo.png": "/Portfolio/static/media/rtu_logo.71a3d621302464357053.png",
+    "static/media/asya_logo.png": "/Portfolio/static/media/asya_logo.e369570474308b44cdb7.png",
+    "static/media/work.jpg": "/Portfolio/static/media/work.6fc839265051cdf3d3fa.jpg",
+    "index.html": "/Portfolio/index.html",
+    "main.1ff26f82.css.map": "/Portfolio/static/css/main.1ff26f82.css.map",
+    "main.1ec2b87c.js.map": "/Portfolio/static/js/main.1ec2b87c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1ff26f82.css",
+    "static/js/main.1ec2b87c.js"
+  ]
+}

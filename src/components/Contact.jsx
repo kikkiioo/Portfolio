@@ -73,7 +73,7 @@ const Contact = () => {
         <div className="popup success">
           <div className="popup-content">
             <button className="close-btn" onClick={handleClosePopup}>×</button>
-            <p>✅ Thanks! I’ll get back to you soon 🚀</p>
+            <p>Thanks! I’ll get back to you soon 🚀</p>
           </div>
         </div>
       )}

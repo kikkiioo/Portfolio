@@ -70,10 +70,24 @@ const Navbar = () => {
 
   const menuId = useMemo(() => "nav-" + Math.random().toString(36).slice(2), []);
 
-  const handleNavClick = (href) => {
+  const handleNavClick = (e, href) => {
+    e.preventDefault();         
     setActive(href);
     setIsOpen(false);
+  
+    requestAnimationFrame(() => {
+      const el = document.querySelector(href);
+      if (!el) return;
+  
+      const nav = document.querySelector('.navbar');
+      const offset = (nav?.offsetHeight || 0) + 20; // small cushion
+  
+      const y = el.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    });
   };
+  
+  
 
   const onMagnetic = (e) => {
     const t = e.currentTarget;
@@ -101,7 +115,7 @@ const Navbar = () => {
                 <a
                   href={l.href}
                   className={active === l.href ? "active" : ""}
-                  onClick={() => handleNavClick(l.href)}
+                  onClick={(e) => handleNavClick(e, l.href)} 
                   onMouseMove={onMagnetic}
                   onMouseLeave={resetMagnetic}
                 >

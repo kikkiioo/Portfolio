@@ -2,11 +2,11 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import "../styles/navbar.scss";
 
 const LINKS = [
-  { href: "#hero", label: "Me" },
+  { href: "#hero", label: "About" },
   { href: "#about", label: "Experience" },
   { href: "#skills", label: "Skills" },
   // { href: "#projects", label: "Projects" },
-  { href: "#contact", label: "Contact Me" },
+  { href: "#contact", label: "Contact" },
 ];
 
 const Navbar = () => {

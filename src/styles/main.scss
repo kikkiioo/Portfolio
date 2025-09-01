@@ -73,6 +73,34 @@ body {
     --color-primary-pink-old-dark: #855052; // lightened rose-taupe
 
   }
+
+/* ===== Scrollbar Styles ===== */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary-pink-old);
+  border-radius: 10px;
+  border: none; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-primary-pink-old-dark);
+}
+
+* {
+  scrollbar-width: auto;
+  scrollbar-color: var(--color-primary-pink-old) transparent;
+}
+
+
   
 
   

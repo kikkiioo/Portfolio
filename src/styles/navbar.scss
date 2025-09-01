@@ -70,7 +70,7 @@ main, #app, .page { padding-top: 64px; }
     position: relative;
     list-style: none;
     display: flex;
-    gap: 1.2rem;
+    gap: 1.5rem;
     margin: 0;
     padding: 0;
     justify-self: center;    /* centers the UL within the grid column */
@@ -100,6 +100,7 @@ main, #app, .page { padding-top: 64px; }
       text-decoration: none;
       color: var(--holo-dim);
       font-weight: 600;
+      font-size: 1.1rem;
       letter-spacing: .3px;
       transform: translate(var(--mx, 0), var(--my, 0));
       transition: color .25s ease, transform .15s ease;
@@ -149,16 +150,17 @@ main, #app, .page { padding-top: 64px; }
       position: fixed; top: 0; right: -100%;
       width: min(86vw, 380px); height: 100vh;
       flex-direction: column; align-items: stretch; justify-content: flex-start;
-      padding: 5.5rem 1rem 2rem; gap: .5rem; z-index: 999;
-      background: linear-gradient(180deg, rgba(14,18,30,.92), rgba(14,18,30,.86));
+      padding: 5.5rem 1rem 2rem; gap: 2.5rem; z-index: 999;
+      background: linear-gradient(180deg,var(--color-primary-pink-old), rgba(14,18,30,.86));
       backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%);
       border-left: 1px solid var(--holo-border);
       box-shadow: -18px 0 40px rgba(0,0,0,.25), inset 0 0 0 1px rgba(255,255,255,.03);
       transition: right .35s cubic-bezier(.2,.8,.2,1);
+      align-items: center;
       &.open { right: 0; }
 
       .glow-indicator { display: none; }
-      li a { padding: .9rem .9rem; font-size: 1.05rem; }
+      li a { padding: .9rem .9rem; font-size: 1.5rem; width: 250px;}
     }
   }
 
